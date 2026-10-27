@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care Sync - Data Logs</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --sidebar-width: 260px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--card-bg);
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar-brand {
+            padding: 24px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .sidebar-menu li a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-menu li.active a, 
+        .sidebar-menu li a:hover {
+            color: var(--primary);
+            background-color: #f0f9ff;
+            border-right: 4px solid var(--primary);
+        }
+
+        /* Main Content Area */
+        main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 40px;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Table Card Layout */
+        .table-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 24px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        td {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-normal {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .status-pending {
+            background-color: #fefce8;
+            color: #ca8a04;
+        }
+    </style>
+
+</head>
+<body>
+    <aside>
+        <div class="sidebar-brand">🏥 Health Care Sync</div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="schedule.html">Appointments</a></li>
+            <li><a href="patients.html">Patients</a></li>
+            <li class="active"><a href="logs.html">Data Logs</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>System & Patient Data Logs</h1>
+            <p>Review recent patient vitals, lab results, and synchronization logs.</p>
+        </header>
+
+        <!-- Data Logs Table -->
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Log ID</th>
+                        <th>Patient Name</th>
+                        <th>Log Type</th>
+                        <th>Timestamp</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#LOG-9281</td>
+                        <td>Jane Doe</td>
+                        <td>Blood Pressure / Vitals</td>
+                        <td>Oct 27, 2026 - 14:32</td>
+                        <td><span class="status-badge status-normal">Normal</span></td>
+                    </tr>
+                    <tr>
+                        <td>#LOG-9282</td>
+                        <td>John Smith</td>
+                        <td>Lab Results (Blood Panel)</td>
+                        <td>Oct 27, 2026 - 13:15</td>
+                        <td><span class="status-badge status-pending">Pending Review</span></td>
+                    </tr>
+                    <tr>
+                        <td>#LOG-9283</td>
+                        <td>Alice Johnson</td>
+                        <td>General Consultation Note</td>
+                        <td>Oct 27, 2026 - 11:45</td>
+                        <td><span class="status-badge status-normal">Normal</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+</body>
+</html>
