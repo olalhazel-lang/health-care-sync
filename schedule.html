@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care Sync - Appointments</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --sidebar-width: 260px;
+
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+
+        }
+
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--card-background);
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+
+        }
+
+        .sidebar-menu {
+            list-style-type: style none;
+            padding: 20px 0;
+
+        }
+
+        .sidebar-menu li a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+
+        }
+
+        .sidebar-menu li.active a,
+        .sidebar-menu li a:hover {
+            color: var(--primary);
+            background-color: #f0f9ff;
+            border-right: 6px solid var(--primary);
+            
+        }
+
+        main {
+            margin-left: var(--sidebar-width);
+            flex: 1.5;
+            padding: 40px;
+        }
+
+        header {
+            margin-bottom: 30px;
+
+        }
+
+        headr h1 {
+            font-size: 2rem;
+            color: var(--text-main);
+
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 5px;
+
+        }
+
+        .form-card {
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            max-width: 700px;
+
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.2s;
+
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+
+        }
+
+        .button {
+            background-color: var(--primary);
+            color: whitesmoke;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background-color: var(--primary-dark);
+        }
+
+    </style>
+</head>
+<body>
+    <aside>
+        <div class="sidebar-brand">Health Care Sync</div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active"><a href="schedule.html">Appointments</a></li>
+            <li><a href="patients.html">Patients</a></li>
+            <li><a href="logs.html">Data logs</a></li>
+
+        </ul>
+    </aside>
+    <main>
+        <header>
+            <h1>Appointment schedule</h1>
+            <p>Book and manage patient appointments with healthcare providers.</p>
+
+        </header>
+
+        <div class="form-card">
+            <form>
+                <div class="form-group>
+                    <label for="patient-name">Patient Full Name</label>
+                    <input type="text" id="patient-name" placeholder="Enter patient name" raquired>
+
+        </div>
+
+        <div class="form-group">
+            <label for="department">Department / Specialist</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option value="general">General Practice</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="orthopedics">Orthopedics</option>
+
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="appt-date">Appointment Date</label>
+            <input type="date" id="appt-date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="appt-time">Appointment Time</label>
+            <input type="time" id="appt-time" required>
+        </div>
+         
+          <button type="submit" class="button">Cornfirm Appointment</button>
+          </form>
+        </div>
+    </main>
+    
+</body>
+</html>
